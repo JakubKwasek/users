@@ -2,11 +2,11 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
-import {Users} from './app/components/users';
+import Users from './app/components/users';
 
 let app = express();
 
-Users();
+new Users(app);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

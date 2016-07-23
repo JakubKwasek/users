@@ -1,8 +1,17 @@
-import { createServer } from 'http';
+import express from 'express';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 
-createServer((req, res) => {
-   res.writeHead(200, {'Content-Type': 'text/plain'});
-   res.end('Hello World');
-}).listen(3000, '127.0.0.1');
+let app = express();
 
-console.log('Server is running!! at http://127.0.0.1:3000/');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
+
+app.get('/users', function (req, res) {
+  res.send('GET request to the homepage');
+});
+
+app.listen(3000, '0.0.0.0');
+
+console.log('Server is running at http://0.0.0.0:3000/');

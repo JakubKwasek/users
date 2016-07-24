@@ -12,7 +12,7 @@ export default class Users {
       let [app] = args;
       this.app = app;
       this.usersCtrl = new UsersCtrl();
-      this.doRoutes()
+      this.doRoutes();
    }
 
    /***
@@ -20,7 +20,7 @@ export default class Users {
       * @desc Do all routes for the Users class
       */
 
-   doRoutes(){
+   doRoutes() {
       this.app.get('/users', (req, res) => {
          this.usersCtrl.getUsers(req, res);
       });

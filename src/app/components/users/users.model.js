@@ -8,6 +8,6 @@
 
 export default class UsersModel {
    constructor(...args) {
-      console.log("Hello Users Model Constructor");
+      
    }
 }

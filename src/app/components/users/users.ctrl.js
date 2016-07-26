@@ -9,12 +9,26 @@ export default class UsersCtrl {
    }
 
    getUsers(req, res, next){
-      res.render('users/layouts/users.layout.ejs');
+      this.usersModel.User.find({}, (err, el) => {
+         if(el){res.render('users/layouts/users.layout.ejs', { users: el } );
+         }
+         next();
+      });
+   }
 
-      console.log(this.usersModel.getAllUsers());
+   getAllUsers(req, res, next){
 
    }
-   getAllUsers(req, res, next){
+
+   addUser(req, res, next){
+
+   }
+
+   deleteUser(req, res, next){
+
+   }
+
+   updateUser(req, res, next){
 
    }
 }

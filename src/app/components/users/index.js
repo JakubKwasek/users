@@ -25,6 +25,18 @@ export default class Users {
       this.app.get('/users', (req, res, next) => {
          this.usersCtrl.getUsers(req, res, next);
       });
+
+      this.app.post('/users', (req, res, next) => {
+
+      });
+
+      this.app.put('/users', (req, res, next) => {
+
+      });
+
+      this.app.delete('/users', (req, res, next) => {
+
+      });
    }
 
 }

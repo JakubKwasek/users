@@ -9,9 +9,10 @@ import UsersCtrl from './users.ctrl';
 export default class Users {
 
    constructor(...args) {
-      let [app] = args;
+      let [app, mongoose] = args;
       this.app = app;
-      this.usersCtrl = new UsersCtrl();
+      this.mongoose = mongoose;
+      this.usersCtrl = new UsersCtrl(this.mongoose);
       this.doRoutes();
    }
 
@@ -21,8 +22,8 @@ export default class Users {
       */
 
    doRoutes() {
-      this.app.get('/users', (req, res) => {
-         this.usersCtrl.getUsers(req, res);
+      this.app.get('/users', (req, res, next) => {
+         this.usersCtrl.getUsers(req, res, next);
       });
    }
 

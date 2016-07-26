@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
+mongoose.connect('mongodb://localhost/tools');
 
 let app = express();
 
@@ -12,8 +13,8 @@ app.set('views', __dirname + '/app/components/');
 
 import Users from './app/components/users';
 import Home from './app/components/home';
-new Users(app);
-new Home(app);
+new Users(app, mongoose);
+new Home(app, mongoose);
 
 app.listen(3000, '0.0.0.0');
 

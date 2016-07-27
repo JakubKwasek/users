@@ -23,19 +23,23 @@ export default class Users {
 
    doRoutes() {
       this.app.get('/users', (req, res, next) => {
-         this.usersCtrl.getUsers(req, res, next);
+         this.usersCtrl.getAllUsers(req, res, next);
       });
 
       this.app.post('/users', (req, res, next) => {
-
+         this.usersCtrl.addUser(req, res, next);
       });
 
-      this.app.put('/users', (req, res, next) => {
-
+      this.app.get('/users/:id', (req, res, next) => {
+         this.usersCtrl.getUser(req, res, next);
       });
 
-      this.app.delete('/users', (req, res, next) => {
+      this.app.put('/users/:id', (req, res, next) => {
+         this.usersCtrl.putUser(req, res, next);
+      });
 
+      this.app.delete('/users/:id', (req, res, next) => {
+         this.usersCtrl.deleteUser(req, res, next);
       });
    }
 

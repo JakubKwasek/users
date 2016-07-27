@@ -1,4 +1,5 @@
 export default class UsersModel {
+   
    constructor(...args) {
       let [mongoose] = args;
       this.mongoose = mongoose;

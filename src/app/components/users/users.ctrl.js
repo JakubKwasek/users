@@ -10,7 +10,7 @@ export default class UsersCtrl {
    getAllUsers(req, res, next){
       this.usersModel.User.find({}, { _id: 0 }, (err, el) => {
          if(el){
-            res.render('users/layouts/users.layout.ejs', { users: el } );
+            res.render('users/layouts/users_layout.ejs', { users: el } );
          }
          next();
       });

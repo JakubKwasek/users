@@ -7,6 +7,6 @@ export default class HomeCtrl {
    }
 
    getHome(req, res){
-      res.render('home/layouts/home.layout.ejs');
+      res.render('home/layouts/home_layout.ejs');
    }
 }
